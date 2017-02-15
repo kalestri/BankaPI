@@ -28,7 +28,7 @@ public class MainFrame extends JFrame{
 		setTitle("Poslovna vežbe");
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		setExtendedState(MAXIMIZED_BOTH);
-		setSize(800, 600);
+		setSize(500, 600);
 		setLocationRelativeTo(null);
 		
 		initMenu();
