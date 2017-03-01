@@ -1,15 +1,16 @@
 package hibernate;
 
+import model.Users;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import model.UserDetails;
 
 public class HibernateTest {
 
 	public static void main(String[] args) {
-		UserDetails user = new UserDetails();
+		Users user = new Users();
 		user.setUserId(1);
 		user.setUsername("First User");
 		
