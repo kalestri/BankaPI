@@ -25,7 +25,7 @@ public class MainFrame extends JFrame{
 
 	public MainFrame(){
 		
-		setTitle("Poslovna vežbe");
+		setTitle("BANKA");
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		setExtendedState(MAXIMIZED_BOTH);
 		setSize(900, 600);
