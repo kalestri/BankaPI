@@ -8,10 +8,11 @@ public class RacuniPravnihLica {
 	private Date datumOtvaranja;
 	private boolean vazeci;
 	
-	
+	public RacuniPravnihLica(){
+		
+	}
 	
 	public RacuniPravnihLica(String brojRauna, Date datumOtvaranja, boolean vazeci) {
-		super();
 		this.brojRauna = brojRauna;
 		this.datumOtvaranja = datumOtvaranja;
 		this.vazeci = vazeci;
