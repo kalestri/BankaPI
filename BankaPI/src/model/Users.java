@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "Users")
+@Table(name = "users")
 public class Users {
 	
 	@Id @GeneratedValue
