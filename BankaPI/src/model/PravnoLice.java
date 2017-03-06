@@ -1,20 +1,39 @@
 package model;
 
-public class PravnaLica {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class PravnoLice {
+@Id
+@Column
+@GeneratedValue(strategy=GenerationType.AUTO)
 	private int pib;
+@Column
 	private String naziv;
+@Column	
 	private String adresa;
+@Column
 	private String email;
+@Column
 	private String webSite;
+@Column
 	private int telefon;
+@Column
 	private int fax;
+@Column
 	private String banka;
 	
+	public PravnoLice(){
+		
+	}
 	
-	public PravnaLica(int pib, String naziv, String adresa, String email, String webSite, int telefon, int fax,
+	
+	public PravnoLice(int pib, String naziv, String adresa, String email, String webSite, int telefon, int fax,
 			String banka) {
-		super();
 		this.pib = pib;
 		this.naziv = naziv;
 		this.adresa = adresa;
