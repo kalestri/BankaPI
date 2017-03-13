@@ -2,14 +2,25 @@
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
                                          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
- <session-factory>
+ <session-factory >
   <property name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>
   <property name="hibernate.connection.password">root</property>
-  <property name="hibernate.connection.url">jdbc:jtds:sqlserver://localhost/test</property>
+  <property name="hibernate.connection.url">jdbc:jtds:sqlserver://localhost/BankaPI</property>
   <property name="hibernate.connection.username">sa</property>
   <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
   <property name="hibernate.hbm2ddl.auto">create</property>
   <property name="hibernate.default_schema">dbo</property>
-  <mapping class="model.Users"/>
+  <mapping class="model.AnalitikaIzvoda"/>
+  <mapping class="model.DnevnoStanjeRacuna"/>
+  <mapping class="model.Drzava"/>
+  <mapping class="model.KodoviBanke"/>
+  <mapping class="model.KursnaLista"/>
+  <mapping class="model.KursUValuti"/>
+  <mapping class="model.NaseljenoMesto"/>
+  <mapping class="model.PravnaLica"/>
+  <mapping class="model.RacuniPravnihLica"/>
+  <mapping class="model.Ukidanje"/>
+  <mapping class="model.Valute"/>
+  <mapping class="model.VrstePlacanja"/>
  </session-factory>
 </hibernate-configuration>

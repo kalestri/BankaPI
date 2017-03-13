@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.hibernate.SessionFactory;
 
-import model.PravnoLice;
+import model.PravnaLica;
 import model.dao.PravnoLiceDao;
 
 //@Repository
@@ -13,12 +13,12 @@ public class PravnoLiceDaoImpl implements PravnoLiceDao {
 	private SessionFactory session;
 	
 	@Override
-	public void add(PravnoLice pravnoLice) {
+	public void add(PravnaLica pravnoLice) {
 		session.getCurrentSession().save(pravnoLice);
 	}
 
 	@Override
-	public void edit(PravnoLice pravnoLice) {
+	public void edit(PravnaLica pravnoLice) {
 		session.getCurrentSession().update(pravnoLice);
 
 	}
@@ -31,8 +31,8 @@ public class PravnoLiceDaoImpl implements PravnoLiceDao {
 	}
 
 	@Override
-	public PravnoLice getPravnoLice(int pib) {
-		return (PravnoLice) session.getCurrentSession().get(PravnoLice.class, pib);
+	public PravnaLica getPravnoLice(int pib) {
+		return (PravnaLica) session.getCurrentSession().get(PravnaLica.class, pib);
 	}
 
 	@Override

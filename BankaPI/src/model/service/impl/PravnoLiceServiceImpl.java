@@ -4,7 +4,7 @@ import java.util.List;
 
 
 
-import model.PravnoLice;
+import model.PravnaLica;
 import model.dao.PravnoLiceDao;
 import model.service.PravnoLiceService;
 //@Service
@@ -13,12 +13,12 @@ public class PravnoLiceServiceImpl implements PravnoLiceService {
 	private PravnoLiceDao pravnoLiceDao;
 	
 
-	public void add(PravnoLice pravnoLice) {
+	public void add(PravnaLica pravnoLice) {
 		pravnoLiceDao.add(pravnoLice);
 
 	}
 
-	public void edit(PravnoLice pravnoLice) {
+	public void edit(PravnaLica pravnoLice) {
 		pravnoLiceDao.edit(pravnoLice);
 
 	}
@@ -29,7 +29,7 @@ public class PravnoLiceServiceImpl implements PravnoLiceService {
 
 	}
 
-	public PravnoLice getPravnoLice(int pib) {
+	public PravnaLica getPravnoLice(int pib) {
 		return pravnoLiceDao.getPravnoLice(pib);
 	}
 
