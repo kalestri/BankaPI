@@ -74,7 +74,7 @@ public class RacuniPravnihLica {
 		return brojRacuna;
 	}
 
-	public void setBrojRacuna(String brojRauna) {
+	public void setBrojRacuna(String brojRacuna) {
 		this.brojRacuna = brojRacuna;
 	}
 

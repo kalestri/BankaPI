@@ -3,7 +3,9 @@ package gui;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,12 +21,16 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
+import model.RacuniPravnihLica;
+import model.dao.RacuniPravnihLicaDao;
 import net.miginfocom.swing.MigLayout;
 
 public class RacuniPravnihLicaForm extends JDialog{
 	private static final long serialVersionUID = 1L;
 
 
+	private RacuniPravnihLicaDao racuniPravnihLicaDao;
+	
 	public static final int MODE_EDIT   = 1;
 	public static final int MODE_ADD    = 2;
 	public static final int MODE_SEARCH = 3;
@@ -76,7 +82,12 @@ public class RacuniPravnihLicaForm extends JDialog{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+				Date date = new Date();
+				RacuniPravnihLica rpl = new RacuniPravnihLica();
+				rpl.setDatumOtvaranja(date);
+				rpl.setBrojRacuna("111");
+				racuniPravnihLicaDao.create(rpl);
 
 			}
 		});
@@ -214,11 +225,12 @@ public class RacuniPravnihLicaForm extends JDialog{
 		toolBar.addSeparator();
 
 
-		btnAdd = new JButton(new ImageIcon(getClass().getResource("/img/add.gif")));
+		btnAdd = new JButton(new ImageIcon(getClass().getResource("./img/add.gif")));
 		btnAdd.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
 
 			}
 		});
