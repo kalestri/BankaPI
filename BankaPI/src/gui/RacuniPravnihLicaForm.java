@@ -225,15 +225,15 @@ public class RacuniPravnihLicaForm extends JDialog{
 		toolBar.addSeparator();
 
 
-		btnAdd = new JButton(new ImageIcon(getClass().getResource("./img/add.gif")));
-		btnAdd.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-
-			}
-		});
+//		btnAdd = new JButton(new ImageIcon(getClass().getResource("./img/add.gif")));
+//		btnAdd.addActionListener(new ActionListener() {
+//
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				
+//
+//			}
+//		});
 		
 		toolBar.add(btnAdd);
 
