@@ -87,7 +87,7 @@ public class RacuniPravnihLicaForm extends JDialog{
 				RacuniPravnihLica rpl = new RacuniPravnihLica();
 				rpl.setDatumOtvaranja(date);
 				rpl.setBrojRacuna("111");
-				racuniPravnihLicaDao.create(rpl);
+				racuniPravnihLicaDao.commit(rpl);
 
 			}
 		});
@@ -235,7 +235,7 @@ public class RacuniPravnihLicaForm extends JDialog{
 //			}
 //		});
 		
-		toolBar.add(btnAdd);
+		//toolBar.add(btnAdd);
 
 		btnDelete = new JButton(new ImageIcon(getClass().getResource("/img/remove.gif")));
 		btnDelete.addActionListener(new ActionListener() {
