@@ -25,7 +25,7 @@ import model.RacuniPravnihLica;
 import model.dao.RacuniPravnihLicaDao;
 import net.miginfocom.swing.MigLayout;
 
-public class RacuniPravnihLicaForm extends JDialog{
+public class RacuniPravnihLicaDialog extends JDialog{
 	private static final long serialVersionUID = 1L;
 
 
@@ -44,7 +44,7 @@ public class RacuniPravnihLicaForm extends JDialog{
 	private JTextField tfNaziv = new JTextField(20);
 
 
-	public RacuniPravnihLicaForm(){
+	public RacuniPravnihLicaDialog(){
 
 		//TODO 
 		//za next mehanizam formirati ColumnList u listeneru vezanom za nextForm dugme forme Drzava
@@ -223,19 +223,6 @@ public class RacuniPravnihLicaForm extends JDialog{
 		toolBar.add(btnLast);
 
 		toolBar.addSeparator();
-
-
-//		btnAdd = new JButton(new ImageIcon(getClass().getResource("./img/add.gif")));
-//		btnAdd.addActionListener(new ActionListener() {
-//
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				
-//
-//			}
-//		});
-		
-		toolBar.add(btnAdd);
 
 		btnDelete = new JButton(new ImageIcon(getClass().getResource("/img/remove.gif")));
 		btnDelete.addActionListener(new ActionListener() {

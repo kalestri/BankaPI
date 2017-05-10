@@ -18,7 +18,7 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JLabel;
 
-public class PregledRacuna extends JDialog {
+public class PregledRacunaDialog extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JTable prTable;
@@ -33,7 +33,7 @@ public class PregledRacuna extends JDialog {
 	 */
 	public static void main(String[] args) {
 		try {
-			PregledRacuna dialog = new PregledRacuna();
+			PregledRacunaDialog dialog = new PregledRacunaDialog();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -44,7 +44,7 @@ public class PregledRacuna extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public PregledRacuna() {
+	public PregledRacunaDialog() {
 		setBounds(100, 100, 800, 500);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -79,7 +79,7 @@ public class PregledRacuna extends JDialog {
 				izmeniPRbutton.setEnabled(false);
 			}
 			{
-				obrisiPRbutton = new JButton("Obrisi");
+				obrisiPRbutton = new JButton("Ukloni");
 			}
 			{
 				sacuvajPRbutton = new JButton("Sacuvaj");

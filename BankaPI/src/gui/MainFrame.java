@@ -1,7 +1,8 @@
 package gui;
 
-import gui.dialog.DrzavaStandardForm;
+import gui.dialog.PregledRacunaDialog;
 
+import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -22,12 +23,25 @@ public class MainFrame extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 	private static MainFrame instance;
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainFrame frame = new MainFrame();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	public MainFrame(){
 		
 		setTitle("BANKA");
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-		setExtendedState(MAXIMIZED_BOTH);
+//		setExtendedState(MAXIMIZED_BOTH);
 		setSize(900, 600);
 		setLocationRelativeTo(null);
 		
@@ -50,37 +64,68 @@ public class MainFrame extends JFrame{
 	
 	private void initMenu(){
 		JMenuBar menuBar = new JMenuBar();
-		JMenu orgSemaMenu = new JMenu("Org. šema");
-		JMenuItem drzavaMI = new JMenuItem("Država");
-		JMenuItem nasmestoMI = new JMenuItem("Naseljeno mesto");
+		JMenu file = new JMenu("File");
+		JMenuItem racuniPravnihLica = new JMenuItem("Racuni pravnih lica");
+		JMenuItem pregledRacuna = new JMenuItem("Pregled racuna");
 		JMenuItem preduzeceMi = new JMenuItem("Preduzeće");
 		JMenuItem poslovniPartnerMI = new JMenuItem("Poslovni partner");
 		JMenuItem sektorMI = new JMenuItem("Sektor");
 		JMenuItem sluzbaMI = new JMenuItem("Služba");
 		
-		orgSemaMenu.add(drzavaMI);
-		orgSemaMenu.add(nasmestoMI);
-		orgSemaMenu.add(preduzeceMi);
-		orgSemaMenu.add(poslovniPartnerMI);
-		orgSemaMenu.add(sektorMI);
-		orgSemaMenu.add(sluzbaMI);
-		menuBar.add(orgSemaMenu);
+		file.add(racuniPravnihLica);
+		file.add(pregledRacuna);
+		file.add(preduzeceMi);
+		file.add(poslovniPartnerMI);
+		file.add(sektorMI);
+		file.add(sluzbaMI);
+		menuBar.add(file);
 		
 		//postavljamo menu bar
 		//ne koristimo add(), nego setJMenuBar()
 		setJMenuBar(menuBar);
 		
-		drzavaMI.addActionListener(new ActionListener() {
+		racuniPravnihLica.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				DrzavaStandardForm drzavaSF = new DrzavaStandardForm();
-				drzavaSF.setVisible(true);
+				RacuniPravnihLicaDialog racuniPravnihLicaForm = new RacuniPravnihLicaDialog();
+				racuniPravnihLicaForm.setVisible(true);
 				
 			}
 		});
 		
+		pregledRacuna.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				PregledRacunaDialog pregledRacuna = new PregledRacunaDialog();
+				pregledRacuna.setVisible(true);
+				
+			}
+		});
+		
+		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	public static MainFrame getInstance(){
 		if (instance == null)

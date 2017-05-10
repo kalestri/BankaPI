@@ -11,7 +11,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import gui.dialog.PregledRacuna;
+import gui.dialog.PregledRacunaDialog;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 public class MainMenu extends JFrame {
 
@@ -39,6 +43,35 @@ public class MainMenu extends JFrame {
 	public MainMenu() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 469, 300);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu mnFile = new JMenu("File");
+		mnFile.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		menuBar.add(mnFile);
+		
+		JMenuItem mntmPregledRacuna = new JMenuItem("Pregled racuna");
+		mntmPregledRacuna.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PregledRacunaDialog pregledRacunaDialog = new PregledRacunaDialog();
+				pregledRacunaDialog.setVisible(true);
+			}
+		});
+		mnFile.add(mntmPregledRacuna);
+		
+		JMenuItem mntmRacuniPravnihLica = new JMenuItem("Racuni pravnih lica");
+		mntmRacuniPravnihLica.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RacuniPravnihLicaDialog racuniPravnihLicaForm = new RacuniPravnihLicaDialog();
+				racuniPravnihLicaForm.setVisible(true);
+			}
+		});
+		mnFile.add(mntmRacuniPravnihLica);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -47,8 +80,7 @@ public class MainMenu extends JFrame {
 		JButton btnPregledRacuna = new JButton("Pregled racuna");
 		btnPregledRacuna.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				PregledRacuna pregledRacunaDialog = new PregledRacuna();
-				pregledRacunaDialog.setVisible(true);
+				
 				}
 		});
 		
@@ -58,8 +90,7 @@ public class MainMenu extends JFrame {
 		btnRacuniPravnihLica.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				RacuniPravnihLicaForm racuniPravnihLicaForm = new RacuniPravnihLicaForm();
-				racuniPravnihLicaForm.setVisible(true);
+				
 				
 			}
 		});
@@ -70,24 +101,26 @@ public class MainMenu extends JFrame {
 					.addGap(66)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(btnRacuniPravnihLica, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
+							.addComponent(btnPregledRacuna, GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
 							.addContainerGap())
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(btnPregledRacuna, GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
-							.addGap(69)
-							.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
-							.addGap(74))))
+							.addComponent(btnRacuniPravnihLica, GroupLayout.PREFERRED_SIZE, 205, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap())))
+				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+					.addGap(301)
+					.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+					.addGap(25))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnPregledRacuna, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
-					.addGap(78)
+				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+					.addContainerGap(59, Short.MAX_VALUE)
+					.addComponent(btnPregledRacuna, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+					.addGap(30)
 					.addComponent(btnRacuniPravnihLica, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-					.addGap(82))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+					.addGap(31))
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
