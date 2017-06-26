@@ -21,6 +21,8 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 
+import database.Test;
+import model.Drzava;
 import model.RacuniPravnihLica;
 import model.dao.RacuniPravnihLicaDao;
 import net.miginfocom.swing.MigLayout;
@@ -87,7 +89,12 @@ public class RacuniPravnihLicaDialog extends JDialog{
 				RacuniPravnihLica rpl = new RacuniPravnihLica();
 				rpl.setDatumOtvaranja(date);
 				rpl.setBrojRacuna("111");
-				racuniPravnihLicaDao.create(rpl);
+				//racuniPravnihLicaDao.add(rpl);
+				Test t = new Test();
+				Drzava d = new Drzava();
+				d.setNazivDrzave("aaaa");
+				d.setSifraDrzave(1);
+				t.addDrzava(d);
 
 			}
 		});

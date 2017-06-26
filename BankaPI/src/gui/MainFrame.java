@@ -14,6 +14,9 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.AnnotationConfiguration;
+
 import database.DBConnection;
 
 public class MainFrame extends JFrame{
@@ -24,7 +27,17 @@ public class MainFrame extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private static MainFrame instance;
 	
+	private static SessionFactory factory;
 	public static void main(String[] args) {
+		try{
+			System.out.print("Dodatoo");
+			factory = new AnnotationConfiguration().
+					configure().addPackage("model").
+				buildSessionFactory();
+		}catch(Throwable ex) { 
+	         System.err.println("Failed to create sessionFactory object." + ex);
+	         throw new ExceptionInInitializerError(ex); 
+		}
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
